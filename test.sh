@@ -15,16 +15,9 @@ yum -y install libxml2-dev libxslt-devel gd-devel
 
 cd /usr/local/src/
 
-[ ! -f "LuaJIT-2.0.5.tar.gz" ] && wget https://github.com/dengrenchao/docker-waf/blob/master/LuaJIT-2.0.5.tar.gz 
-[ ! -f "nginx-1.14.0.tar.gz" ] && wget https://github.com/dengrenchao/docker-waf/blob/master/nginx-1.14.0.tar.gz && 
-[ ! -f "v0.3.0.tar.gz" ] && wget https://github.com/dengrenchao/docker-waf/blob/master/v0.3.0.tar.gz 
-[ ! -f "v0.10.13.tar.gz" ] && wget https://github.com/dengrenchao/docker-waf/blob/master/v0.10.13.tar.gz
-[ ! -f "master.zip" ] && wget https://github.com/dengrenchao/docker-waf/blob/master/master.zip --no-check-certificate
-[ ! -f "nginx-upstream-fair-master.zip" ] && wget https://github.com/dengrenchao/docker-waf/blob/master/nginx-upstream-fair-master.zip --no-check-certificate
+[ ! -f "waf.tgz" ] && wget https://github.com/dengrenchao/docker-waf/blob/master/waf.tgz
 
-ls *.tar.gz | xargs -n 1  tar xf
-cd /usr/local/src/ && unzip nginx-upstream-fair-master.zip -d /usr/local/src/ 
-
+ls *.tgz | xargs -n 1  tar xf
 cd LuaJIT-2.0.5 && make && make install && cd ..
 
 echo "export LUAJIT_LIB=/usr/local/lib" >> /etc/profile && \
