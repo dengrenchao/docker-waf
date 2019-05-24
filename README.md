@@ -7,8 +7,10 @@
 
 
 
-    安装 docker
-    执行 sh install_docker.sh
+    #install docker
+
+    execute: sh install_docker.sh
+
     [root@localhost ~]# sh install_docker.sh
 
 
@@ -19,7 +21,7 @@
 
 
 
-###配置文件说明
+###Profile description
 dockerpid  = docker exec -it pid_name bash
 
 ngin_path：/usr/local/nginx/
