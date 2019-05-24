@@ -28,6 +28,7 @@
 
 
 ### Verify the web service effect ###
+[root@localhost ~]# curl http://tmp.test.com/test.php?id=../etc/passwd
 ![waf](https://share-emlog.oss-cn-beijing.aliyuncs.com/waf-web.png)
 
 
