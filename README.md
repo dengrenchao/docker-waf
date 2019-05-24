@@ -28,7 +28,7 @@
 
 
 Verify the web service effect
-[https://github.com/dengrenchao/docker-waf/blob/master/waf-web.png](https://github.com/dengrenchao/docker-waf/blob/master/waf-web.png "waf")
+![waf](https://share-emlog.oss-cn-beijing.aliyuncs.com/waf-web.png)
 
 
 
