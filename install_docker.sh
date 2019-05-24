@@ -40,6 +40,27 @@ sudo yum -y remove docker \
 find / -name docker |xargs rm -rf;
 cd /etc/yum.repos.d/ && wget http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 yum install -y  docker-ce-18.03.1.ce
+
+#set docker addresss
+sudo mkdir -p /etc/docker
+sudo tee /etc/docker/daemon.json <<-'EOF'
+{
+
+  "registry-mirrors":["https://culfukli.mirror.aliyuncs.com"]
+  
+}
+EOF
 sudo systemctl daemon-reload
 sudo systemctl enable docker && systemctl restart docker
+
+sudo tee /bin/dockerpid <<-'EOF'
+#!/bin/bash
+
+x1=${1}
+
+docker exec -it $x1 bash
+
+EOF
+chmod +x /bin/dockerpid
 docker pull centos && docker ps
+
