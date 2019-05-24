@@ -22,7 +22,7 @@ cd LuaJIT-2.0.5 && make && make install && cd ..
 echo "export LUAJIT_LIB=/usr/local/lib" >> /etc/profile && \
 echo "export LUAJIT_INC=/usr/local/include/luajit-2.0" >> /etc/profile
 source /etc/profile
-cd nginx-1.14.0 && useradd -s /sbin/nologin -M nginx
+cd /usr/local/src/nginx-1.14.0 && useradd -s /sbin/nologin -M nginx
 ./configure --user=nginx --group=nginx \
 --prefix=/usr/local/nginx \
 --with-http_stub_status_module \
