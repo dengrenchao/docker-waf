@@ -1,6 +1,7 @@
 #!/bin/bash
 #Author: Template
 
+yum -y install vim
 yum -y install git
 yum -y install gcc gcc-c++ 
 yum -y install autoconf automake 
@@ -12,11 +13,9 @@ yum -y install GeoIP GeoIP-devel GeoIP-data
 yum -y install libxml2-dev libxslt-devel gd-devel 
 
 git clone https://github.com/dengrenchao/docker-waf.git
-
+mv ../docker-waf/*.tar.gz /usr/local/src/
 cd /usr/local/src/
-
-
-ls *.tgz | xargs -n 1  tar xf
+ls *.tar.gz | xargs -n 1  tar xf
 cd LuaJIT-2.0.5 && make && make install && cd ..
 
 echo "export LUAJIT_LIB=/usr/local/lib" >> /etc/profile && \
